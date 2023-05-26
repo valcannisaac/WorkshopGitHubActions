@@ -13,7 +13,7 @@ jobs:
       matrix:
         os: [ubuntu-latest, macos-latest]
     steps:
-      - name: Verifica a distribuição do Linux
+      - name: Verifica a versao do SO
         run: |
           if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
             cat /etc/*-release  # Comandos para Linux
