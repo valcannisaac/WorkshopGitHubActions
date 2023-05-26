@@ -18,7 +18,7 @@ jobs:
           if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
             cat /etc/*-release  # Comandos para Linux
           elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-            echo "Running on Windows"
+            Write-Host "Running on Windows"
           elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
             echo "Running on macOS"
           else
