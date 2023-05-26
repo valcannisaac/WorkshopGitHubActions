@@ -1,4 +1,4 @@
-name: Linux Distribution Checker
+name: Version Checker
 
 on:
   push:
