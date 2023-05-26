@@ -11,14 +11,14 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest, macos-latest]
+        os: [ubuntu-latest, macos-latest]
     steps:
       - name: Verifica a distribuição do Linux
         run: |
           if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
             cat /etc/*-release  # Comandos para Linux
           elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            echo "Running on macOS"  # Comandos para macOS
+            sw_vers
           else
-            echo "Running on Windows"
+            echo "Sistema Operacional não suportado"
           fi
