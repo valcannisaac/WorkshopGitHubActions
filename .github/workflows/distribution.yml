@@ -15,12 +15,15 @@ jobs:
     steps:
       - name: Verifica a distribuição do Linux
         run: |
-          if [[ "${{ matrix.os }}" == "ubuntu-latest" ]]; then
+          if ("${{ matrix.os }}" -eq "ubuntu-latest") {
             cat /etc/*-release  # Comandos para Linux
-          elif [[ "${{ matrix.os }}" == "windows-latest" ]]; then
-            Write-Host "Running on Windows"
-          elif [[ "${{ matrix.os }}" == "macos-latest" ]]; then
-            echo "Running on macOS"
-          else
-            echo "Unsupported OS"
-          fi
+          }
+          elseif ("${{ matrix.os }}" -eq "windows-latest") {
+            Write-Host "Running on Windows"  # Comandos para Windows
+          }
+          elseif ("${{ matrix.os }}" -eq "macos-latest") {
+            Write-Host "Running on macOS"  # Comandos para macOS
+          }
+          else {
+            Write-Host "Unsupported OS"
+          }
