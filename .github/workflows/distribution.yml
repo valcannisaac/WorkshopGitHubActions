@@ -1,0 +1,14 @@
+name: Linux Distribution Checker
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    
+jobs:
+  echo_hello_world_isaac:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verifica a distribuição do linux
+        run: cat /etc/*-release
