@@ -8,7 +8,10 @@ on:
     
 jobs:
   echo_hello_world_isaac:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
     steps:
       - name: Verifica a distribuição do linux
         run: cat /etc/*-release
